@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('waitlist-form');
-  const confirmation = document.getElementById('confirmation');
   const getStartedBtn = document.getElementById('get-started');
   const navbarGetStartedBtn = document.getElementById('navbar-get-started');
   const formSection = document.getElementById('form-section');
@@ -74,12 +73,20 @@ document.addEventListener('DOMContentLoaded', function() {
   form.addEventListener('submit', function(e) {
     e.preventDefault();
     
+    const submitBtn = document.getElementById('submit-button');
+    
+    // Prevent multiple submissions
+    if (submitBtn.disabled) {
+      return;
+    }
+    
     // Validate form before processing
     if (!validateForm()) {
       return;
     }
     
-    const submitBtn = document.getElementById('submit-button');
+    // Disable button to prevent multiple clicks
+    submitBtn.disabled = true;
     
     // Add loading animation
     submitBtn.classList.add('onclic');
@@ -89,11 +96,72 @@ document.addEventListener('DOMContentLoaded', function() {
       submitBtn.classList.remove('onclic');
       submitBtn.classList.add('validate');
       
-      // After 1.25 seconds, show confirmation (keep validate state)
-      setTimeout(function() {
-        form.classList.add('hidden');
-        confirmation.classList.remove('hidden');
-      }, 1250);
+      // Keep form visible with validated button
     }, 2250);
   });
+
+  // Tilt effect for feature cards
+  function throttle(func, delay) {
+    let lastCall = 0;
+    return function (...args) {
+      const now = new Date().getTime();
+      if (now - lastCall < delay) {
+        return;
+      }
+      lastCall = now;
+      return func.apply(this, args);
+    };
+  }
+
+  function initTiltEffect() {
+    const featureCards = document.querySelectorAll('.feature');
+    
+    featureCards.forEach(card => {
+      const onMouseMove = throttle((e) => {
+        const box = card.getBoundingClientRect();
+        const x = e.clientX - box.left;
+        const y = e.clientY - box.top;
+        const centerX = box.width / 2;
+        const centerY = box.height / 2;
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`;
+      }, 100);
+
+      const onMouseLeave = () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      };
+
+      card.addEventListener('mousemove', onMouseMove);
+      card.addEventListener('mouseleave', onMouseLeave);
+    });
+  }
+
+  // Initialize tilt effect
+  initTiltEffect();
+
+  // Scroll animations
+  function initScrollAnimations() {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all scroll-animate elements
+    document.querySelectorAll('.scroll-animate').forEach(el => {
+      observer.observe(el);
+    });
+  }
+
+  // Initialize scroll animations
+  initScrollAnimations();
 }); 

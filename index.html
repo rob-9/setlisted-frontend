@@ -10,7 +10,13 @@
 <body>
   <header>
     <nav class="navbar">
-      <div class="navbar-logo">Setlisted</div>
+      <a href="https://setlisted.co/" target="_blank" class="navbar-logo">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="navbar-icon">
+          <circle cx="12" cy="12" r="2"/>
+          <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+        </svg>
+        SETLISTED
+      </a>
     </nav>
   </header>
   <div class="hero-bg">
@@ -25,18 +31,72 @@
       <img src="assets/images/cd.png" alt="CD Graphic" class="cd-graphic" />
     </div>
   </div>
-  <div class="form-section" id="form-section">
-    <form id="waitlist-form" class="waitlist-form" novalidate>
-      <input type="text" id="name" name="name" placeholder="Your Name" required>
-      <input type="email" id="email" name="email" placeholder="Your Email" required>
-      <button type="submit" class="submit-btn" id="submit-button">Join Waitlist</button>
-    </form>
-    <div id="confirmation" class="confirmation hidden">
-      <h2>Thank you for joining!</h2>
-      <p>You're on the list. We'll let you know when Setlisted is ready for you.</p>
+  <div class="features-section scroll-animate">
+    <div class="features-container">
+      <h2 class="features-title scroll-animate">FEATURES</h2>
+      <div class="features-grid scroll-animate">
+        <div class="feature scroll-animate">
+          <div class="feature-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="2"/>
+              <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+            </svg>
+          </div>
+          <h3>Stay Informed.</h3>
+          <p>Get early access to your favorite artists' unreleased music.</p>
+        </div>
+        <div class="feature scroll-animate">
+          <div class="feature-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9l6 6 6-6"/>
+              <circle cx="12" cy="12" r="1"/>
+              <path d="M19 12c0-7-7-7-7-7s-7 0-7 7c0 1.5.5 2.5 1.5 3.5L12 21l5.5-5.5c1-1 1.5-2 1.5-3.5z"/>
+            </svg>
+          </div>
+          <h3>Live Updates.</h3>
+          <p>Get notified the moment your tracked songs become available on streaming platforms.</p>
+        </div>
+        <div class="feature scroll-animate">
+          <div class="feature-icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+              <path d="M8 9h8M8 13h6"/>
+            </svg>
+          </div>
+          <h3>Curated Collections.</h3>
+          <p>Build or generate personalized playlists of unreleased music within minutes.</p>
+        </div>
+      </div>
     </div>
   </div>
+  <div class="form-section scroll-animate" id="form-section">
+    <h2 class="signup-header scroll-animate">JOIN THE WAITLIST</h2>
+    <form id="waitlist-form" class="waitlist-form scroll-animate" novalidate>
+      <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <input type="email" id="email" name="email" placeholder="Your Email" required>
+      <button type="submit" class="submit-btn" id="submit-button">Submit</button>
+    </form>
+  </div>
   <footer>
+    <div class="waveform-container">
+      <div class="waveform">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </div>
     <p class="footer-text">&copy; 2025 Setlisted. All rights reserved.</p>
   </footer>
   <script src="assets/js/script.js"></script>
