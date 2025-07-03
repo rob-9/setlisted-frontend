@@ -12,17 +12,33 @@
     <nav class="navbar">
       <a href="https://setlisted.co/" target="_blank" class="navbar-logo">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="navbar-icon">
-          <circle cx="12" cy="12" r="2"/>
-          <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
+          <path d="M9 18V5l12-2v13"/>
+          <circle cx="6" cy="18" r="3"/>
+          <circle cx="18" cy="16" r="3"/>
         </svg>
         SETLISTED
       </a>
+      <div class="navbar-right">
+        <div class="hamburger-menu active" id="hamburger-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="menu-overlay" id="menu-overlay">
+          <div class="menu-content">
+            <a href="#about" class="menu-item">About</a>
+            <a href="#features" class="menu-item">Features</a>
+            <a href="#waitlist" class="menu-item">Waitlist</a>
+            <a href="#music" class="menu-item">Music!</a>
+          </div>
+        </div>
+      </div>
     </nav>
   </header>
   <div class="hero-bg">
     <div class="hero-content">
       <h1 class="hero-title fadeInUp-animation">FIND. TRACK. FAVORITE.<br>UNRELEASED SONGS.</h1>
-      <p class="hero-subtitle fadeInUp-animation-delay-1">The ID app for music lovers.<br>Experience the future of music discovery.</p>
+      <p class="hero-subtitle fadeInUp-animation-delay-1">By Music Lovers, For Music Lovers.<br>Experience the future of track discovery.</p>
       <button class="btn btn-4 fadeInUp-animation-delay-2" id="get-started">
         <span>Get Early Access</span>
       </button>
@@ -31,7 +47,17 @@
       <img src="assets/images/cd.png" alt="CD Graphic" class="cd-graphic" />
     </div>
   </div>
-  <div class="features-section scroll-animate">
+  <div class="about-section scroll-animate" id="about">
+    <div class="about-container">
+      <h2 class="about-title scroll-animate">ABOUT US</h2>
+      <div class="about-content scroll-animate">
+        <p>We are building a platform that <span class="highlight-underline">changes</span> how people <span class="highlight-underline">discover, track, and share</span> unreleased music — making it dead simple to <span class="highlight-underline">ID, save, and relive</span> unreleased tracks they <span class="pink-glow">love</span>.</p>
+        <p><span class="highlight-underline">We believe music makes the world better.</span> Setlisted will be more than a product — it will be a place where people <span class="highlight-underline">connect, share, and build emotional ties</span> with music like never before.</p>
+        <p class="final-paragraph">Join the many who are already discovering their next favorite songs on Setlisted.</p>
+      </div>
+    </div>
+  </div>
+  <div class="features-section scroll-animate" id="features">
     <div class="features-container">
       <h2 class="features-title scroll-animate">FEATURES</h2>
       <div class="features-grid scroll-animate">
@@ -42,7 +68,7 @@
               <path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/>
             </svg>
           </div>
-          <h3>Stay Informed.</h3>
+          <h3>Stay Informed</h3>
           <p>Get early access to your favorite artists' unreleased music.</p>
         </div>
         <div class="feature scroll-animate">
@@ -53,7 +79,7 @@
               <path d="M19 12c0-7-7-7-7-7s-7 0-7 7c0 1.5.5 2.5 1.5 3.5L12 21l5.5-5.5c1-1 1.5-2 1.5-3.5z"/>
             </svg>
           </div>
-          <h3>Live Updates.</h3>
+          <h3>Get Live Updates</h3>
           <p>Get notified the moment your tracked songs become available on streaming platforms.</p>
         </div>
         <div class="feature scroll-animate">
@@ -63,14 +89,14 @@
               <path d="M8 9h8M8 13h6"/>
             </svg>
           </div>
-          <h3>Curated Collections.</h3>
+          <h3>Curate Collections</h3>
           <p>Build or generate personalized playlists of unreleased music within minutes.</p>
         </div>
       </div>
     </div>
   </div>
-  <div class="form-section scroll-animate" id="form-section">
-    <h2 class="signup-header scroll-animate">JOIN THE WAITLIST</h2>
+  <div class="form-section scroll-animate" id="waitlist">
+    <h2 class="signup-header scroll-animate">WAITLIST</h2>
     <form id="waitlist-form" class="waitlist-form scroll-animate" novalidate>
       <input type="text" id="name" name="name" placeholder="Your Name" required>
       <input type="email" id="email" name="email" placeholder="Your Email" required>
@@ -99,6 +125,48 @@
     </div>
     <p class="footer-text">&copy; 2025 Setlisted. All rights reserved.</p>
   </footer>
+
+  <!-- Music Modal -->
+  <div class="music-modal" id="music-modal">
+    <div class="music-modal-content">
+      <button class="music-modal-close" id="music-modal-close">&times;</button>
+      <div class="music-album-art">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M9 18V5l12-2v13"/>
+          <circle cx="6" cy="18" r="3"/>
+          <circle cx="18" cy="16" r="3"/>
+        </svg>
+      </div>
+      <div class="music-info">
+        <h3>Unreleased Track #1</h3>
+        <p>Unknown Artist</p>
+      </div>
+      <div class="music-controls">
+        <button class="music-control-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="19,20 9,12 19,4"/>
+            <line x1="5" y1="19" x2="5" y2="5"/>
+          </svg>
+        </button>
+        <button class="music-control-btn play">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5,3 19,12 5,21"/>
+          </svg>
+        </button>
+        <button class="music-control-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5,4 15,12 5,20"/>
+            <line x1="19" y1="5" x2="19" y2="19"/>
+          </svg>
+        </button>
+      </div>
+      <div class="music-progress">
+        <div class="music-progress-bar"></div>
+      </div>
+      <p style="color: #888; font-size: 0.9rem; margin-top: 10px;">1:23 / 3:45</p>
+    </div>
+  </div>
+
   <script src="assets/js/script.js"></script>
 </body>
 </html> 
